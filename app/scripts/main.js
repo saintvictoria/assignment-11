@@ -34,9 +34,24 @@ function expect(target) {
 // / /__/ /_/ / / / (__  ) /_/ /  / /_/ / /__/ /_/ /_/ / /  (__  )
 // \___/\____/_/ /_/____/\__/_/   \__,_/\___/\__/\____/_/  /____/
 //
-// Only add code to *THIS* section!
+var Dog = function (options){
+  var options = options || {};
+  this.color = options.color;
+  this.name = options.name;
+  this.hungry = (options.hungry === undefined) ? true : options.hungry;
+  this.status = 'normal';
+};
 
-// ????????
+var Human = function (options){
+  var options = options || {};
+  this.pet = function(touch){
+    touch.status = 'happy';
+  };
+  this.feed = function(fed){
+    fed.hungry = false;
+  }
+  this.cool = (options.cool === undefined) ? false: options.cool;
+};
 // ????????
 // ????????
 
