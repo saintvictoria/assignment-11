@@ -39,18 +39,23 @@ var Dog = function (options){
   this.color = options.color;
   this.name = options.name;
   this.hungry = (options.hungry === undefined) ? true : options.hungry;
-  this.status = 'normal';
+  this.status = options.status ||'normal';
 };
 
 var Human = function (options){
   var options = options || {};
-  this.pet = function(touch){
-    touch.status = 'happy';
+  this.pet = function(dog){
+    dog.status = 'happy';
   };
-  this.feed = function(fed){
-    fed.hungry = false;
+  this.feed = function(dog){
+    dog.hungry = false;
   }
-  this.cool = (options.cool === undefined) ? false: options.cool;
+  this.cool = (options.cool === undefined) ? false : options.cool;
+  //if(options.cool === undefined){
+  //this.cool = false;
+//}else{
+  //this.cool = options.cool;
+//}
 };
 // ????????
 // ????????
